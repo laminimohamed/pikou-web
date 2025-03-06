@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pickleball Activities</title>
+    <link rel="stylesheet" href="../components/header.css">
+    <link rel="stylesheet" href="../components/footer.css">
+    <link rel="stylesheet" href="activities.css">
+</head>
+<body>
+    <div id="header-container"></div>
+    <div class="header">
+        <h1>Pickleball Activity Examples</h1>
+        <p>Fun Ways to Enjoy Pickleball</p>
+    </div>
+
+    <div class="activity-card">
+        <img src="../activities/1.jpg" 
+             alt="Doubles Play" 
+             class="activity-image">
+        <div class="activity-content">
+            <h2>Doubles Strategy Sessions</h2>
+            <p>Join our weekly doubles matches featuring:
+                <ul>
+                    <li>Team coordination drills</li>
+                    <li>Serve placement practice</li>
+                    <li>Net play strategies</li>
+                    <li>Friendly tournaments</li>
+                </ul>
+            </p>
+        </div>
+    </div>
+
+    <div class="activity-card">
+        <div class="activity-content">
+            <h2>Beginner Clinics</h2>
+            <p>Learn pickleball fundamentals:
+                <ul>
+                    <li>Proper grip techniques</li>
+                    <li>Basic rules overview</li>
+                    <li>Stroke development</li>
+                    <li>Court positioning</li>
+                </ul>
+            </p>
+        </div>
+        <img src="../activities/2.jpg" 
+             alt="Beginner Clinic" 
+             class="activity-image">
+    </div>
+
+    <div class="activity-card">
+        <img src="../activities/3.jpg" 
+             alt="Youth Program" 
+             class="activity-image">
+        <div class="activity-content">
+            <h2>Youth Summer Camps</h2>
+            <p>Junior players will enjoy:
+                <ul>
+                    <li>Age-appropriate coaching</li>
+                    <li>Skill-building games</li>
+                    <li>Mini tournaments</li>
+                    <li>Sportsmanship training</li>
+                </ul>
+            </p>
+        </div>
+    </div>
+
+    
+    <div id="footer-container"></div>
+
+
+    <script>
+        const cards = document.querySelectorAll('.activity-card');
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if(entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, { threshold: 0.1 });
+
+        cards.forEach(card => {
+            observer.observe(card);
+        });
+    </script>
+
+    <script>
+        // Load header
+        fetch('../components/header.html')
+            .then(response => response.text())
+            .then(data => document.getElementById('header-container').innerHTML = data);
+
+        // Load footer
+        fetch('../components/footer.html')
+            .then(response => response.text())
+            .then(data => document.getElementById('footer-container').innerHTML = data);
+    </script>
+</body>
+</html>

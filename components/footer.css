@@ -1,0 +1,132 @@
+
+.footer-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    border-right: 1px solid #404040;
+    padding: 0 1.5rem;
+}
+
+.footer-section:last-child {
+    border-right: none;
+}
+
+.footer-badge {
+    width: 60px;
+    height: 60px;
+    filter: blur(2px);
+    margin-bottom: 0.5rem;
+}
+
+.icp-link {
+    color: #fff;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    transition: opacity 0.3s ease;
+}
+
+.icp-link:hover {
+    opacity: 0.8;
+}
+
+.icp-logo {
+    width: 24px;
+    height: 24px;
+}
+
+.contact-info {
+    text-align: left;
+}
+
+.contact-info i {
+    margin-right: 0.5rem;
+    color: #f18806;
+}
+
+.copyright {
+    font-size: 0.9em;
+    padding: 1rem 0;
+    text-align: center;
+    color: #fff;
+}
+/* Existing Styles with Height Adjustments */
+.site-footer {
+    background: #e09705;
+    color: #ffffff;
+    padding: 2rem 0;
+    font-size: 20px;
+    position: relative;
+    /* Removed fixed height and overflow */
+}
+
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    gap: 0.5rem;
+    padding: 0 1rem;
+    color: #F7FFF7;
+    /* Removed height calculation */
+}
+
+/* Updated Mobile Styles */
+@media (max-width: 768px) {
+    .site-footer {
+        font-size: 16px; /* Reduced base size */
+        padding: 1.5rem 0 3.5rem; /* Tighter padding */
+    }
+
+    .footer-content {
+        gap: 1rem;
+        padding: 0 0.5rem;
+    }
+
+    .footer-section {
+        align-items: center; /* Center all items */
+        text-align: center;
+        padding: 1rem 0;
+        border-bottom: 1px solid rgba(64, 64, 64, 0.5); /* Subtle border */
+    }
+
+    .footer-badge {
+        width: 45px; /* Smaller badge */
+        height: 20px;
+        margin-bottom: 0.75rem;
+    }
+
+    .contact-info {
+        text-align: center; /* Center contact details */
+        font-size: 0.85em;
+        width: 100%;
+    }
+
+    .icp-link {
+        justify-content: center; /* Center ICP备案 */
+        padding: 0.3rem 0;
+    }
+
+    .copyright {
+        font-size: 0.8em;
+        padding: 0.8rem 0;
+        text-align: center; /* Horizontal centering */
+       
+    }
+
+    .highlight {
+        margin-left: 4px; /* Tighter highlight spacing */
+    }
+
+    /* Compact grid spacing */
+    .footer-section > * {
+        margin-bottom: 0.5rem;
+    }
+    .site-footer{
+        font-size: 10px;
+    }
+}
+
+

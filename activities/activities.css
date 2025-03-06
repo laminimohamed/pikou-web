@@ -1,0 +1,68 @@
+@keyframes slideIn {
+    from { transform: translateX(-100%); }
+    to { transform: translateX(0); }
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f0fff4;
+}
+
+.header {
+    text-align: center;
+    padding: 2em;
+    background-color: #f18806;
+    color: white;
+    margin-bottom: 2em;
+    width: 100%;
+    box-sizing: border-box
+}
+
+.activity-card {
+    display: flex;
+    align-items: center;
+    margin: 2em auto;
+    max-width: 800px;
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    overflow: hidden;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.8s ease;
+}
+
+.activity-card.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.activity-image {
+    flex: 1;
+    max-width: 400px;
+    transition: transform 0.3s ease;
+}
+
+.activity-image:hover {
+    transform: scale(1.05);
+}
+
+.activity-content {
+    flex: 1;
+    padding: 2em;
+}
+
+.activity-content h2 {
+    color: #f18806;
+    margin-top: 0;
+}
+
+@media (max-width: 768px) {
+    .activity-card {
+        flex-direction: column;
+    }
+    
+    .activity-image {
+        max-width: 100%;
+    }
+}

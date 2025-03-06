@@ -1,0 +1,92 @@
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f5f5f5;
+}
+
+.header {
+    background-color: #f18806;
+    color: white;
+    text-align: center;
+    padding: 2em;
+    animation: fadeIn 1.5s ease-in;
+}
+
+.coaching-section {
+    display: flex;
+    align-items: center;
+    padding: 3em;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 1s ease;
+}
+
+.coaching-section.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.coaching-image {
+    flex: 1;
+    max-width: 400px;
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+}
+
+.coaching-image:hover {
+    transform: scale(1.05);
+}
+
+.coaching-description {
+    flex: 1;
+    padding: 2em;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.cta-button {
+    background-color: #ea8513;
+    color: white;
+    padding: 1em 2em;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1.1em;
+    transition: background-color 0.3s ease;
+}
+
+.cta-button:hover {
+    background-color: #0f0f0f;
+}
+
+.cta-section {
+    text-align: center;
+    padding: 4em;
+    background-image: url('court-bg.jpg');
+    background-size: cover;
+    color: white;
+}
+
+.cta-section h2 {
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+    margin-bottom: 1rem;
+}
+
+
+@media (max-width: 768px) {
+    .coaching-section {
+        flex-direction: column;
+        padding: 1em;
+    }
+    
+    .coaching-image {
+        margin-bottom: 1.5rem;
+    }
+}

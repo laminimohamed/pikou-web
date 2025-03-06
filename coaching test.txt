@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pikoupikou Pickleball Coaching</title>
+    <link rel="stylesheet" href="../components/header.css">
+    <link rel="stylesheet" href="../components/footer.css">
+    <link rel="stylesheet" href="coaching.css">
+</head>
+<body>
+    <div id="header-container"></div>
+    <header class="header">
+        <h1>Pikoupikou Pickleball Excellence</h1>
+        <p>Master the Game with Professional Coaching</p>
+    </header>
+
+    <section class="coaching-section">
+        <img src="/coaching/1.jpg" alt="Beginner Coaching" class="coaching-image">>
+        <div class="coaching-description">
+            <h2>Beginner Foundations</h2>
+            <p>Start your pickleball journey with our comprehensive beginner program. Learn:</p>
+            <ul>
+                <li>Basic rules and scoring system</li>
+                <li>Proper grip and paddle control</li>
+                <li>Fundamental strokes and serves</li>
+                <li>Court positioning and movement</li>
+            </ul>
+            <button class="cta-button">Start Learning</button>
+        </div>
+    </section>
+
+    <section class="coaching-section">
+        <div class="coaching-description">
+            <h2>Advanced Strategy Development</h2>
+            <p>Elevate your game with our expert-level coaching:</p>
+            <ul>
+                <li>Advanced shot selection and placement</li>
+                <li>Competitive tournament strategies</li>
+                <li>Doubles communication techniques</li>
+                <li>Mental toughness training</li>
+            </ul>
+            <button class="cta-button">Enhance Skills</button>
+        </div>
+        <img src="/coaching/2.jpg" alt="Advanced Coaching" class="coaching-image">
+    </section>
+
+    <div id="footer-container"></div>
+
+    
+
+    <script>
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('.coaching-section').forEach((section) => {
+            observer.observe(section);
+        });
+    </script>
+
+    <script>
+        // Load header
+        fetch('../components/header.html')
+            .then(response => response.text())
+            .then(data => document.getElementById('header-container').innerHTML = data);
+
+        // Load footer
+        fetch('../components/footer.html')
+            .then(response => response.text())
+            .then(data => document.getElementById('footer-container').innerHTML = data);
+    </script>
+</body>
+</html>

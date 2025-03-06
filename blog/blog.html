@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pickleball Blog | Pikoupikou</title>
+    <link rel="stylesheet" href="../components/header.css">
+    <link rel="stylesheet" href="../components/footer.css">
+    <link rel="stylesheet" href="blog.css">
+</head>
+<body>
+    <div id="header-container"></div>
+    <header class="blog-header">
+        <div class="header-content">
+            <h1>Pikoupikou Blog</h1>
+            <p>Tips, Strategies & Latest News</p>
+        </div>
+    </header>
+
+    <div class="blog-container">
+        <main class="main-content">
+            <article class="blog-post">
+                <div class="post-image">
+                    <img src="../blog/1.jpg" 
+                         alt="Pickleball Techniques">
+                </div>
+                <div class="post-content">
+                    <div class="post-meta">
+                        <span class="post-category">Strategy</span>
+                        <span class="post-date">May 15, 2024</span>
+                    </div>
+                    <h2>Mastering the Third Shot Drop</h2>
+                    <p>Learn how to perfect this essential shot that can transform your game strategy. Discover proper form, positioning, and practice drills...</p>
+                    <a href="#" class="read-more">Read More →</a>
+                </div>
+            </article>
+
+            <article class="blog-post">
+                <div class="post-image">
+                    <img src="/products/racket3/Weixin Image_20250210160240.jpg" 
+                         alt="Paddle Selection">
+                </div>
+                <div class="post-content">
+                    <div class="post-meta">
+                        <span class="post-category">Equipment</span>
+                        <span class="post-date">May 12, 2024</span>
+                    </div>
+                    <h2>Choosing the Right Paddle: 2024 Guide</h2>
+                    <p>Navigate the complex world of paddle materials, weights, and grip sizes with our comprehensive buyer's guide...</p>
+                    <a href="#" class="read-more">Read More →</a>
+                </div>
+            </article>
+
+            <article class="blog-post">
+                <div class="post-image">
+                    <img src="/blog/2.jpg" 
+                         alt="Tournament Preparation">
+                </div>
+                <div class="post-content">
+                    <div class="post-meta">
+                        <span class="post-category">Competition</span>
+                        <span class="post-date">May 10, 2024</span>
+                    </div>
+                    <h2>Preparing for Your First Tournament</h2>
+                    <p>Essential tips for mental and physical preparation, what to pack, and how to handle tournament pressure...</p>
+                    <a href="#" class="read-more">Read More →</a>
+                </div>
+            </article>
+        </main>
+
+        <aside class="sidebar">
+            <div class="sidebar-widget">
+                <h3>Search Blog</h3>
+                <input type="text" placeholder="Search articles..." class="search-bar">
+            </div>
+
+            <div class="sidebar-widget">
+                <h3>Recent Posts</h3>
+                <ul class="recent-posts">
+                    <li><a href="#">Improving Your Serve Accuracy</a></li>
+                    <li><a href="#">Court Etiquette 101</a></li>
+                    <li><a href="#">Winter Training Tips</a></li>
+                </ul>
+            </div>
+
+            <div class="sidebar-widget">
+                <h3>Categories</h3>
+                <ul class="categories">
+                    <li><a href="#">Strategy</a></li>
+                    <li><a href="#">Equipment</a></li>
+                    <li><a href="#">Training</a></li>
+                </ul>
+            </div>
+        </aside>
+    </div>
+
+    <div class="pagination">
+        <a href="#" class="page-number active">1</a>
+        <a href="#" class="page-number">2</a>
+        <a href="#" class="page-number">3</a>
+    </div>
+
+    <div id="footer-container"></div>
+
+
+    <script>
+        // Scroll animation for blog posts
+        const blogPosts = document.querySelectorAll('.blog-post');
+        const postObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if(entry.isIntersecting) {
+                    entry.target.style.opacity = 1;
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, { threshold: 0.1 });
+
+        blogPosts.forEach(post => {
+            post.style.opacity = 0;
+            post.style.transform = 'translateY(30px)';
+            post.style.transition = 'all 0.6s ease-out';
+            postObserver.observe(post);
+        });
+    </script>
+
+    <script>
+        // Load header
+        fetch('../components/header.html')
+            .then(response => response.text())
+            .then(data => document.getElementById('header-container').innerHTML = data);
+
+        // Load footer
+        fetch('../components/footer.html')
+            .then(response => response.text())
+            .then(data => document.getElementById('footer-container').innerHTML = data);
+    </script>
+
+</body>
+</html>

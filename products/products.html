@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Showcase</title>
+    <link rel="stylesheet" href="../components/header.css">
+    <link rel="stylesheet" href="../components/footer.css">
+
+    <link rel="stylesheet" href="products.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div id="header-container"></div>
+    <section class="products-section">
+        <div class="container">
+            <h2 class="section-title">Featured Products</h2>
+            
+            <div class="product-grid">
+                <!-- Product 1 -->
+                <div class="product-card">
+                    <div class="image-slider">
+                        <img src="racket1/1.jpg" class="slider-image" alt="Vintage Chair">
+                        <img src="racket1/2.jpg" class="slider-image" alt="Chair Details">
+                        <img src="racket1/3.jpg" class="slider-image" alt="Chair Installation">
+                        <img src="racket1/4.jpg" class="slider-image" alt="Chair Installation">
+                    
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">Classic Snake</h3>
+                        <p class="product-price">$599.99</p>
+                    </div>
+                </div>
+
+                <!-- Product 2 -->
+                <div class="product-card">
+                    <div class="image-slider">
+                        <img src="racket2/Weixin Image_20250210160203.jpg" class="slider-image" alt="Desk Lamp Details">
+
+                        <img src="racket2/racket2.jpg" class="slider-image" alt="Desk Lamp">
+                        <img src="racket2/Weixin Image_20250210160141.jpg" class="slider-image" alt="Desk Lamp Details">
+                        <img src="racket2/Weixin Image_20250210160151.jpg" class="slider-image" alt="Desk Lamp Details">
+
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">Classic Cat</h3>
+                        <p class="product-price">$149.99</p>
+                    </div>
+                </div>
+
+                <!-- Product 3 -->
+                <div class="product-card">
+                    <div class="image-slider">
+                        <img src="racket3/Weixin Image_20250210160245.jpg" class="slider-image" alt="Industrial Shelf">         
+                        <img src="racket3/1.jpg" class="slider-image" alt="Industrial Shelf">
+                        <img src="racket3/Weixin Image_20250210160222.jpg" class="slider-image" alt="Industrial Shelf">
+                        <img src="racket3/Weixin Image_20250210160237.jpg" class="slider-image" alt="Industrial Shelf">
+                        <img src="racket3/Weixin Image_20250210160240.jpg" class="slider-image" alt="Industrial Shelf">
+
+
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">Classic Bear</h3>
+                        <p class="product-price">$299.99</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="lightbox-modal" id="lightbox">
+            <span class="close-btn">&times;</span>
+            <button class="nav-btn prev-btn"><i class="fas fa-chevron-left"></i></button>
+            <button class="nav-btn next-btn"><i class="fas fa-chevron-right"></i></button>
+            
+            <div class="modal-content">
+                <img class="modal-image" id="modalImage">
+            </div>
+            
+            <div class="modal-dots" id="modalDots"></div>
+        </div>
+        
+    </section>
+    <div id="footer-container"></div>
+
+    <script src="products.js"></script>
+
+    <script>
+        // Load header
+        fetch('../components/header.html')
+            .then(response => response.text())
+            .then(data => document.getElementById('header-container').innerHTML = data);
+
+        // Load footer
+        fetch('../components/footer.html')
+            .then(response => response.text())
+            .then(data => document.getElementById('footer-container').innerHTML = data);
+    </script>
+</body>
+</html>

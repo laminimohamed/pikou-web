@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Landing Page</title>
+    <link rel="stylesheet" href="../components/header.css">
+    <link rel="stylesheet" href="../components/footer.css">
+    <link rel="stylesheet" href="LP.css">
+</head>
+<body>
+
+    <div id="header-container"></div>
+    <!-- First Section: Miniature with Description -->
+     <!-- Miniature Section -->
+     <section class="miniature-section">
+        <div class="miniature-content">
+            <!-- Text Container -->
+            <div class="miniature-text">
+                <h2> WELCOME TO PIKOUPIKOU</h2>
+                <p>Join the pickleball community with our premium paddles. Designed for players of all levels, our paddles bring power, precision, and durability to every game.</p>
+                <button class="cta-button">Learn More</button>
+            </div>
+            
+            <!-- Image Container with Hover Effect -->
+            <div class="miniature-image-container">
+                <img src="products/racket3/1-removebg-preview.png" alt="Feature" class="miniature-img">
+            </div>
+        </div>
+    </section>
+
+    
+
+<!-- Updated Section 1 with Animated Images -->
+    <!-- Section 1: Image Left + Text Right -->
+    <section class="content-section1">
+        <div class="content-block">
+            <!-- Image Container -->
+            <div class="image-group">
+                <div class="animated-image-container img1">
+                    <img src="coaching/1.jpg" alt="Coaching 1" class="content-image">
+                </div>
+                <div class="animated-image-container img2">
+                    <img src="coaching/2.jpg" alt="Coaching 2" class="content-image">
+                </div>
+                <div class="animated-image-container img3">
+                    <img src="coaching/3.jpg" alt="Coaching 3" class="content-image">
+                </div>
+            </div>
+            
+            <!-- Text Container -->
+            <div class="content-text">
+                <h3>Pickleball Coaching</h3>
+                <p>Improve your skills with personalized pickleball coaching. Whether you're a beginner or advanced player, our expert coaches will help you master techniques and strategies to elevate your game.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 2: Image Right + Text Left -->
+        <!-- Section 2: Text Left + Two Images Right -->
+    <section class="content-section2">
+        <div class="content-block">
+            <div class="content-text">
+                <h3>Pickleball Activities</h3>
+                <p>Join our pickleball community and enjoy a variety of engaging activities for all skill levels. Whether you're looking to improve, compete, or simply have fun, there's something for everyone. Stay active, connect with others, and elevate your game! 🚀</p>
+            </div>
+            
+            <div class="section2-image-group">
+                <div class="section2-image-container section2-img1">
+                    <img src="activities/1.jpg" alt="Activities 4" class="section2-image">
+                </div>
+                <div class="section2-image-container section2-img2">
+                    <img src="activities/2.jpg" alt="activities 5" class="section2-image">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div id="footer-container"></div>
+    <script src="LP.js"></script>
+
+    <script>
+        // Load header
+        fetch('../components/header.html')
+            .then(response => response.text())
+            .then(data => document.getElementById('header-container').innerHTML = data);
+
+        // Load footer
+        fetch('../components/footer.html')
+            .then(response => response.text())
+            .then(data => document.getElementById('footer-container').innerHTML = data);
+    </script>
+</body>
+</html>
