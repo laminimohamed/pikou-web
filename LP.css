@@ -446,152 +446,139 @@ overflow: hidden;
 /* ======================
    RESPONSIVE DESIGN 
    ====================== */
-@media (max-width: 768px) {
-    .top-bar {
-        padding: 0.5rem 1rem !important;
+/* ======================
+   MOBILE RESPONSIVE STYLES 
+   ====================== */
+   @media (max-width: 768px) {
+    /* Miniature Section Containment */
+    .miniature-section {
+      padding: 4rem 1.5rem !important;
+      height: auto !important;
+      overflow: hidden;
     }
-
-    .icons .icon {
-        margin-left: 1rem !important;
-        font-size: 1.5rem !important;
+  
+    .miniature-content {
+      grid-template-columns: 1fr !important;
+      gap: 2rem !important;
+      width: 100%;
+      max-width: 100% !important;
+      padding: 0 !important;
     }
-
+  
     .miniature-text {
-        font-size: 1.9rem !important;
-        padding: 0 1rem;
+      font-size: 1.8rem !important;
+      padding: 0 1rem !important;
+      text-align: center;
+      max-width: 100% !important;
+      order: 1;
     }
-
-    .content-section1 .content-block{
-        grid-template-columns: 1fr !important;
-        gap: 0 !important;
-        text-shadow: #2c3e50 1px 1px 1px;
+  
+    .miniature-image-container {
+      width: 90%;
+      max-width: 400px !important;
+      margin: 2rem auto;
+      order: 2;
+      position: relative;
+      z-index: 1;
     }
-    .content-section2 .content-block {
-        grid-template-columns: 1fr;
-        gap: 40px;
+  
+    .miniature-img {
+      width: 100% !important;
+      height: auto !important;
+      max-height: 50vh;
+      object-fit: contain;
     }
-    
-    .section2-image-group {
-        grid-template-columns: 1fr;
-        gap: 20px;
+  
+    /* Content Section 1 Containment */
+    .content-section1 {
+      height: auto !important;
+      padding: 3rem 1rem !important;
     }
-    
-    .section2-image {
-        height: 300px;
+  
+    .content-section1 .content-block {
+      grid-template-columns: 1fr !important;
+      gap: 2rem !important;
+      padding: 0 1rem;
     }
-    
-    .image-caption {
-        padding: 15px;
-        font-size: 0.9em;
-    }
-    
-    @keyframes slideIn {
-        from {
-            opacity: 0;
-            transform: translateY(30px);
-        }
-        to {
-            opacity: 1;
-            transform: translateY(0);
-        }
-    }
-    
-
+  
     .image-group {
-        order: 2;
-        width: 100%;
-        height: auto;
-        max-width: 600px;
-        
+      order: 2;
+      width: 100%;
+      max-width: 600px;
+      margin: 0 auto;
+      padding: 0 !important;
     }
-
+  
     .content-text {
-        font-size: 15px;
-        order: 1;
-        text-align: center;
-        padding: 10 !important;
-        margin-bottom: 20px;
-
-        
+      order: 1;
+      text-align: center;
+      padding: 1rem !important;
+      margin-bottom: 2rem;
     }
+  
+    /* Content Section 2 Containment */
+    .content-section2 {
+      padding: 3rem 1rem !important;
     }
-
-    @media (max-width: 768px) {
-        .miniature-section {
-            padding: 4rem 1.5rem !important;
-            height: 600px !important;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-    
-        .miniature-content {
-            grid-template-columns: 1fr !important;
-            gap: 2rem !important;
-            width: 100%;
-            max-width: 100% !important;
-            padding: 0 !important;
-        }
-
-        .cta-button {
-            margin-top: 20px;
-        }
-    
-        .miniature-text {
-            font-size: 1.8rem !important;
-            line-height: 1.3;
-            /* text-align: ; */
-            order: 1;
-            padding: 0 1rem;
-            padding-left: 45px;
-            text-align: center;
-            max-width: 90% !important;
-            
-        }
-    
-        .miniature-image-container {
-            width: 90%;
-            max-width: 400px !important;
-            margin: 0 auto;
-            order: 2;
-            width: 50%;
-            position: relative;
-            z-index: 1;
-            margin-top: 20px;
-            margin-bottom: 20px;
-        }
-    
-        .miniature-img {
-            width: 100% !important;
-            height: auto !important;
-            max-height: 50vh;
-            object-fit: contain;
-            
-        }
-
-        .miniature-image-container {
-            animation: mobile-fall 1s ease-out forwards;
-        }
-    
-        @keyframes mobile-fall {
-            0% { transform: translateY(-50px); opacity: 0; }
-            100% { transform: translateY(0); opacity: 1; }
-        }
+  
+    .content-section2 .content-block {
+      grid-template-columns: 1fr !important;
+      gap: 2rem !important;
+      padding: 0 1rem;
     }
-    
-    @media (max-width: 360px) {
-        .miniature-section {
-            padding: 3rem 1rem !important;
-        }
-    
-        .miniature-text {
-            font-size: 1.3rem !important;
-        }
-    
-        .miniature-image-container {
-            max-width: 300px !important;
-        }
+  
+    .section2-image-group {
+      grid-template-columns: 1fr !important;
+      gap: 2rem !important;
     }
+  
+    .section2-image-container {
+      width: 100% !important;
+      margin: 0 auto;
+    }
+  
+    /* Global Mobile Adjustments */
+    .cta-button {
+      width: 90%;
+      max-width: 300px;
+      margin: 2rem auto 0;
+      display: block;
+    }
+  
+    .nav-links {
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 1rem !important;
+    }
+  
+    @keyframes mobile-fall {
+      0% { transform: translateY(-50px); opacity: 0; }
+      100% { transform: translateY(0); opacity: 1; }
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .miniature-text {
+      font-size: 1.5rem !important;
+    }
+  
+    .content-text h3 {
+      font-size: 2em !important;
+    }
+  
+    .section2-image {
+      height: 250px !important;
+    }
+  
+    .navbar {
+      padding: 1rem !important;
+    }
+  
+    .nav-links a {
+      font-size: 0.9rem;
+    }
+  }  
+
 
     @media (max-width: 360px) {
     html { font-size: 10px; }
